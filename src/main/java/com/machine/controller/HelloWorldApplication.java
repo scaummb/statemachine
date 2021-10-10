@@ -5,6 +5,7 @@ package com.machine.controller;
  * @date: 2021/8/24 23:15
  */
 
+import com.machine.controller.aop.Tracker;
 import com.machine.controller.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -24,6 +25,7 @@ public class HelloWorldApplication {
 
 	@RequestMapping(value = "hello")
 	@ResponseBody
+	@Tracker
 	public String hello() {
 		return orderService.pay(1);
 	}
